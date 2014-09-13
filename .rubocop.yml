@@ -6,6 +6,7 @@ AllCops:
     - spec/spec_helper.rb
     - spec/rails_helper.rb
     - Guardfile
+    - vendor/**/*
 
 LineLength:
   Max: 110
