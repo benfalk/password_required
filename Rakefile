@@ -19,4 +19,4 @@ load 'rails/tasks/engine.rake'
 
 Bundler::GemHelper.install_tasks
 
-task default: ['app:spec', 'app:cucumber', 'app:rubocop']
+task default: ['app:db:migrate', 'app:spec', 'app:cucumber', 'app:rubocop']

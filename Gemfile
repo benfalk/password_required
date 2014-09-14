@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.2'
 
 # Declare your gem's dependencies in password_required.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -18,6 +19,7 @@ group :development, :test do
   gem 'guard-rubocop', require: false
   gem 'quiet_assets'
   gem 'spring'
+  gem 'pry'
 end
 
 group :test do

@@ -245,6 +245,7 @@ DEPENDENCIES
   guard-rspec
   guard-rubocop
   password_required!
+  pry
   quiet_assets
   rspec-its
   rspec-rails
