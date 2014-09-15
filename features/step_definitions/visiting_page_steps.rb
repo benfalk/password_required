@@ -21,3 +21,7 @@ end
 Then(/^I should have one widget named "(.*?)"$/) do |arg1|
   expect(Widget.where(name: arg1).count).to eq(1)
 end
+
+Then(/^put "(.*?)" in the "(.*?)" field$/) do |arg1, arg2|
+  fill_in arg2, with: arg1
+end

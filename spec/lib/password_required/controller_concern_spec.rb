@@ -83,7 +83,7 @@ module PasswordRequired
 
         describe '#password_supplied?' do
           it 'is true if the password param is not blank' do
-            get :new, password: 'roflcopter'
+            get :new, password_request: { password: 'roflcopter' }
             expect(subject.password_supplied?).to eq(true)
           end
         end
@@ -95,12 +95,12 @@ module PasswordRequired
           end
 
           it 'delegates to password_check_method the password supplied' do
-            post :create, password: 'roflcopterz'
+            post :create, password_request: { password: 'roflcopterz' }
             expect(subject.password_correct?).to eq(true)
           end
 
           it 'delegates to password_check_method' do
-            post :create, password: 'dink'
+            post :create, password_request: { password: 'dink' }
             expect(subject.password_correct?).to eq(false)
           end
         end

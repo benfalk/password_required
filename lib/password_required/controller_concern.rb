@@ -1,4 +1,5 @@
 require 'password_required/password_request'
+require 'password_required/controller_concern/arguments_composer'
 
 module PasswordRequired
   module ControllerConcern
@@ -10,8 +11,8 @@ module PasswordRequired
 
     included do
       def self.password_required(opts = {})
-        actions = Array(opts.fetch(:for) { fail ArgumentError })
-        before_action :guard_with_password!, only: actions
+        fail ArgumentError, ':for key is required' unless opts[:for].present?
+        ArgumentsComposer.new(opts).call(self)
       end
 
       rescue_from PasswordMissing, PasswordWrong, with: :present_password_request
@@ -26,11 +27,11 @@ module PasswordRequired
     end
 
     def password_supplied?
-      params[:password].present?
+      password_given.present?
     end
 
     def password_correct?
-      instance_exec(params[:password], &password_check_method)
+      instance_exec(password_given, &password_check_method)
     end
 
     def password_required?
@@ -43,6 +44,12 @@ module PasswordRequired
 
     def password_check_method
       password_check_methods[action_name]
+    end
+
+    def password_given
+      params[:password_request][:password]
+    rescue
+      ''
     end
 
     def guard_with_password!

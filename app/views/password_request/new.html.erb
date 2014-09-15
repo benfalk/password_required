@@ -1,2 +1,10 @@
-<%= form_for @password_request do |f| %>
-
+<%= form_for @password_request, url: @password_request.target_url do |f| %>
+  <p>You're password is required to continue.</p>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.submit 'continue' %>
+  </div>
+<% end %>

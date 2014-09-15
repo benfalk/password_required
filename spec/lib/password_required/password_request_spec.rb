@@ -15,9 +15,15 @@ module PasswordRequired
     end
 
     context 'env REQUEST_METHOD of post' do
-      let(:env) { { 'REQUEST_METHOD' => 'POST' } }
+      let(:env) do
+        {
+          'REQUEST_METHOD' => 'POST',
+          'ORIGINAL_FULLPATH' => '/roflcopters'
+        }
+      end
+      subject { PasswordRequest.new(request) }
 
+      its(:target_url) { should eq('/roflcopters') }
     end
-
   end
 end
