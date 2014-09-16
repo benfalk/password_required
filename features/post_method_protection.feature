@@ -1,6 +1,5 @@
 Feature: Posting to a password protected action
 
-  @wip
   Scenario: Attempting to create a resource
     When I visit the "new_widget_path"
     And put "My Widget" in "widget[name]" field

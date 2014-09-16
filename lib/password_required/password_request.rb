@@ -24,7 +24,7 @@ module PasswordRequired
     end
 
     def hidden_form_inputs
-      HiddenInputs.new(additional_params).to_s
+      HiddenInputs.new(additional_params).to_s.html_safe
     end
   end
 end
