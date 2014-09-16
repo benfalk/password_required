@@ -16,6 +16,11 @@ module PasswordRequired
         expect(controller_class.password_check_methods[:create]).to be_a(Proc)
       end
 
+      it 'should set password check methods with a proc' do
+        subject.new(options.merge(with: ->() { true })).call(controller_class)
+        expect(controller_class.password_check_methods[:create]).to be_a(Proc)
+      end
+
       it 'should call before_action with :create' do
         subject.new(options).call(controller_class)
         expect(controller_class).to have_received(:before_action)
