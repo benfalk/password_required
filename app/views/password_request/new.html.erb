@@ -1,0 +1,11 @@
+<%= form_for @password_request, url: @password_request.target_url do |f| %>
+  <%= @password_request.hidden_form_inputs %>
+  <p>You're password is required to continue.</p>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.submit 'continue' %>
+  </div>
+<% end %>
