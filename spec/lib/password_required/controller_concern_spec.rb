@@ -105,6 +105,18 @@ module PasswordRequired
           end
         end
 
+        describe '#password_given' do
+          it 'maps to the password supplied from password_request[password]' do
+            post :create, password_request: { password: 'dink' }
+            expect(subject.password_given).to eq('dink')
+          end
+
+          it 'returns an empty string if the param structure is wrong' do
+            post :create, junk: { it: 'wrong' }
+            expect(subject.password_given).to eq('')
+          end
+        end
+
         describe '#password_check_method' do
           let(:check_methods) do
             Hash.new(->(_) { false }).tap do |h|
