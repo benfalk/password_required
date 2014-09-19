@@ -8,8 +8,8 @@ GIT
 PATH
   remote: .
   specs:
-    password_required (0.0.1)
-      rails (~> 4.1.6)
+    password_required (0.1.0)
+      rails (~> 4.1)
 
 GEM
   remote: https://rubygems.org/
