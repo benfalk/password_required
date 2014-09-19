@@ -25,3 +25,23 @@ end
 Then(/^put "(.*?)" in the "(.*?)" field$/) do |arg1, arg2|
   fill_in arg2, with: arg1
 end
+
+Given(/^there is a widget named "(.*?)"$/) do |arg1|
+  @widget = Widget.create name: arg1
+end
+
+Given(/^I am on the "(.*?)" show page$/) do |arg1|
+  visit widget_path(Widget.find_by(name: arg1))
+end
+
+When(/^I click the "(.*?)" button$/) do |arg1|
+  click_button arg1
+end
+
+Then(/^I should not have one widget named "(.*?)"$/) do |arg1|
+  expect(Widget.where(name: arg1).count).to eq(0)
+end
+
+When(/^I am on the "(.*?)" edit page$/) do |arg1|
+  visit edit_widget_path(Widget.find_by(name: arg1))
+end

@@ -1,7 +1,7 @@
 class WidgetsController < ApplicationController
   include PasswordRequired::ControllerConcern
 
-  password_required for: [:create, :update, :destroy, :show],
+  password_required for: [:create, :update, :destroy],
                     with: ->(password) { password == 'password' }
 
   before_action :set_widget, only: [:show, :edit, :update, :destroy]
