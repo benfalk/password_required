@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = PasswordRequired::VERSION
   s.authors     = ['Benjamin Falk']
   s.email       = %w(benjamin.falk@yahoo.com)
-  s.homepage    = ''
+  s.homepage    = 'https://github.com/benfalk/password_required'
   s.summary     = 'Password Protection'
   s.description = 'Requires password for rails controller actions'
   s.license     = 'MIT'
@@ -17,6 +17,4 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
   s.add_dependency 'rails', '~> 4.1'
-
-  s.add_development_dependency 'sqlite3'
 end

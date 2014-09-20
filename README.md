@@ -1,6 +1,6 @@
 ## PasswordRequired
 
-[![GitHub version](https://badge.fury.io/gh/benfalk%2Fpassword_required.svg)](http://badge.fury.io/gh/benfalk%2Fpassword_required)
+[![Gem Version](https://badge.fury.io/rb/password_required.svg)](http://badge.fury.io/rb/password_required)
 [![Build Status](https://travis-ci.org/benfalk/password_required.svg?branch=master)](https://travis-ci.org/benfalk/password_required)
 [![Code Climate](https://codeclimate.com/github/benfalk/password_required/badges/gpa.svg)](https://codeclimate.com/github/benfalk/password_required)
 [![Coverage Status](https://img.shields.io/coveralls/benfalk/password_required.svg)](https://coveralls.io/r/benfalk/password_required)

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.1.2'
+gem 'sqlite3'
 
 # Declare your gem's dependencies in password_required.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
