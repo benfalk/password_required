@@ -2,6 +2,19 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 gem 'sqlite3'
 
+# Get the rails version for testing
+rails_version = ENV['RAILS_VERSION'] || 'default'
+rails = case rails_version
+        when 'master'
+          { github: 'rails/rails' }
+        when 'default'
+          '~> 4.1'
+        else
+          "~> #{rails_version}"
+        end
+
+gem 'rails', rails
+
 # Declare your gem's dependencies in password_required.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
