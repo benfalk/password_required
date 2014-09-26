@@ -52,7 +52,8 @@ protected actions.
 ### Current Limitations and Issues
 
 * Only POST type actions are supported DELETE, POST, PUT
-* Only designed and tested with rails 4.1
+* ~~Only designed and tested with rails 4.1~~
+* Works for rails >= 4.0.0
 
 ### FAQ
 
