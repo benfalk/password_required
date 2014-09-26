@@ -4,7 +4,6 @@ gem 'sqlite3'
 
 # Get the rails version for testing
 rails_version = ENV['RAILS_VERSION'] || 'default'
-puts rails_version
 rails = case rails_version
         when 'master'
           { github: 'rails/rails' }
